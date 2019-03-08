@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Book List</title>
+    <title>Phone List</title>
     <style>
         table, tr, td {
             border: 1px solid brown;
@@ -20,6 +20,7 @@
             <td>${product.name}</td>
             <td>${product.description}</td>
             <td>$${product.price}</td>
+            <td><a href="EditServlet?id=${product.id}">Edit</a> </td>
         </tr>
     </c:forEach></table>
 <br/>
