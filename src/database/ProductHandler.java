@@ -15,12 +15,13 @@ public class ProductHandler extends Connection {
         ResultSet resultSet = null;
         try {
             connection = getConnection();
-            String sql = "SELECT name, description, price FROM products";
+            String sql = "SELECT * FROM products";
             pStatement = connection.prepareStatement(sql);
             resultSet = pStatement.executeQuery();
-            System.out.println(sql);
+            //System.out.println(sql);
             while (resultSet.next()) {
                 Product product = new Product();
+                product.setId(resultSet.getInt("id"));
                 product.setName(resultSet.getString("name"));
                 product.setDescription(resultSet.getString("description"));
                 product.setPrice(resultSet.getFloat("price"));
